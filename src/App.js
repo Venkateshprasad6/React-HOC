@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import Label from './Components/Label';
+import Button from './Components/Button';
+import clickTracking from './Components/clickTracking';
+
+const ButtonWithTracking = clickTracking(Button);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <ButtonWithTracking label="Pay Now" trackingInfo={{ amount: "2000", name: "prasad" }} />
+         <ButtonWithTracking label="Pay Now" trackingInfo={{ amount: "6000", name: "sakthi" }} />
+      </div>
+      <Label />
     </div>
   );
-}
+};
 
 export default App;
